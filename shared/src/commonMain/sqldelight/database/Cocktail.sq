@@ -1,0 +1,70 @@
+CREATE TABLE CocktailEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    alternative TEXT,
+    tags TEXT,
+    video TEXT,
+    category TEXT,
+    strIBA TEXT,
+    alcoholic TEXT,
+    glass TEXT,
+    instructions TEXT,
+    instructionsES TEXT,
+    instructionsDE TEXT,
+    instructionsFR TEXT,
+    instructionsIT TEXT,
+    instructionsZHHANS TEXT,
+    instructionsZHHANT TEXT,
+    drinkThumb TEXT,
+    ingredient1 TEXT,
+    ingredient2 TEXT,
+    ingredient3 TEXT,
+    ingredient4 TEXT,
+    ingredient5 TEXT,
+    ingredient6 TEXT,
+    ingredient7 TEXT,
+    ingredient8 TEXT,
+    ingredient9 TEXT,
+    ingredient10 TEXT,
+    ingredient11 TEXT,
+    ingredient12 TEXT,
+    ingredient13 TEXT,
+    ingredient14 TEXT,
+    ingredient15 TEXT,
+    measure1 TEXT,
+    measure2 TEXT,
+    measure3 TEXT,
+    measure4 TEXT,
+    measure5 TEXT,
+    measure6 TEXT,
+    measure7 TEXT,
+    measure8 TEXT,
+    measure9 TEXT,
+    measure10 TEXT,
+    measure11 TEXT,
+    measure12 TEXT,
+    measure13 TEXT,
+    measure14 TEXT,
+    measure15 TEXT,
+    imageSource TEXT,
+    imageAttribution TEXT,
+    creativeCommonsConfirmed TEXT,
+    dateModified TEXT
+);
+
+saveCocktail:
+INSERT OR REPLACE
+INTO CocktailEntity(id, name, alternative, tags, video, category, strIBA, alcoholic, glass, instructions, instructionsES, instructionsDE, instructionsFR, instructionsIT, instructionsZHHANS, instructionsZHHANT, drinkThumb, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7, ingredient8, ingredient9, ingredient10, ingredient11, ingredient12, ingredient13, ingredient14, ingredient15, measure1, measure2, measure3, measure4, measure5, measure6, measure7, measure8, measure9, measure10, measure11, measure12, measure13, measure14, measure15, imageSource, imageAttribution, creativeCommonsConfirmed, dateModified)
+VALUES ?;
+
+deleteCocktail:
+DELETE
+FROM CocktailEntity
+WHERE id = ?;
+
+getSavedCocktailList:
+SELECT *
+FROM CocktailEntity;
+
+checkCocktailSaved:
+SELECT EXISTS (SELECT 1 FROM CocktailEntity WHERE id = ?);
